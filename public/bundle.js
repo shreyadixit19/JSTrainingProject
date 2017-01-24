@@ -22447,7 +22447,9 @@
 	
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Contest.__proto__ || Object.getPrototypeOf(Contest)).call.apply(_ref, [this].concat(args))), _this), _this.handleSubmit = function (event) {
 	      event.preventDefault();
-	      _this.props.addName(_this.refs.newNameInput.value, _this.props._id);
+	      if (_this.refs.newNameInput.value != '') {
+	        _this.props.addName(_this.refs.newNameInput.value, _this.props._id);
+	      }
 	      _this.refs.newNameInput.value = '';
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
