@@ -1,12 +1,19 @@
-var webpack = require('webpack');
-
 module.exports = {
-  entry: './script.js',
-  devtool: 'inline-source-map',
+  entry: './src/index.js',
   output: {
-    filename: 'compiled.js'
+    path: __dirname + '/public',
+    filename: 'bundle.js'
   },
-  resolve: {
-    extensions: ['', '.js']
+  module: {
+    loaders: [
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader'
+      }
+    ]
   }
 };
